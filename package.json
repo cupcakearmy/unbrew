@@ -1,6 +1,6 @@
 {
   "name": "unbrew",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Niccolo Borgioli",
     "email": "hi@nicco.io",
@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "bin": {
-    "unbrew": "node ./src/index.js"
+    "unbrew": "bin/unbrew.js"
   },
   "dependencies": {
     "chalk": "4",

@@ -1,0 +1,17 @@
+{
+  "name": "unbrew",
+  "version": "0.1.0",
+  "author": {
+    "name": "Niccolo Borgioli",
+    "email": "hi@nicco.io",
+    "url": "https://nicco.io"
+  },
+  "license": "MIT",
+  "bin": {
+    "unbrew": "./src/index.js"
+  },
+  "dependencies": {
+    "chalk": "4",
+    "inquirer": "7"
+  }
+}

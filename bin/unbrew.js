@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const cp = require('child_process')
 const chalk = require('chalk')
 
@@ -40,13 +42,13 @@ async function main() {
   ])
 
   console.log('🗑 Uninstalling:', chalk.bold.blue(getLoosers(keepers).join(' ')))
-  // while (true) {
-  //   const loosers = getLoosers(keepers)
-  //   if (!loosers.length) break
+  while (true) {
+    const loosers = getLoosers(keepers)
+    if (!loosers.length) break
 
-  //   const joinedLoosers = loosers.join(' ')
-  //   cp.execSync(`brew uninstall ${joinedLoosers}`)
-  // }
+    const joinedLoosers = loosers.join(' ')
+    cp.execSync(`brew uninstall ${joinedLoosers}`)
+  }
   console.log('🧽 Cleaning up')
   cp.execSync(`brew cleanup`)
   console.log(chalk.bold.green('🚀 Done'))

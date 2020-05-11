@@ -19,8 +19,8 @@ function getListOfLeaves() {
   return list.trim().split('\n')
 }
 
-function getLoosers(keepers) {
-  return getListOfLeaves().filter((leave) => !keepers.includes(leave))
+function getLoosers(keepers, leaves = getListOfLeaves()) {
+  return leaves.filter((leave) => !keepers.includes(leave))
 }
 
 async function main() {
@@ -29,28 +29,46 @@ async function main() {
     return
   }
 
+  let leaves
+  let loosers
+
+  leaves = getListOfLeaves()
   const { keepers } = await inquirer.prompt([
     {
       type: 'checkbox',
-      message: 'Uncheck all unwanted packages',
+      message: 'Select packages to keep (all by default)',
       name: 'keepers',
-      choices: getListOfLeaves().map((leave) => ({
+      choices: leaves.map((leave) => ({
         name: leave,
         checked: true,
       })),
     },
   ])
 
-  console.log('🗑 Uninstalling:', chalk.bold.blue(getLoosers(keepers).join(' ')))
-  while (true) {
-    const loosers = getLoosers(keepers)
-    if (!loosers.length) break
+  loosers = getLoosers(keepers, leaves)
+  const { confirmed } = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'confirmed',
+      message: `Delelte: ${chalk.bold.blue(loosers.join(' '))}`,
+    },
+  ])
 
+  if (!confirmed) {
+    console.log(chalk.bold.red('Aborted'))
+    return
+  }
+
+  console.log('🗑 Uninstalling')
+  while (loosers.length) {
     const joinedLoosers = loosers.join(' ')
     cp.execSync(`brew uninstall ${joinedLoosers}`)
+    loosers = getLoosers(keepers)
   }
+
   console.log('🧽 Cleaning up')
   cp.execSync(`brew cleanup`)
+
   console.log(chalk.bold.green('🚀 Done'))
 }
 main()

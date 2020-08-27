@@ -1,8 +1,13 @@
 # 🍺 unbrew
 
+![NPM Version](https://img.shields.io/npm/v/unbrew)
+![NPM Wekly Downloads](https://img.shields.io/npm/dm/unbrew)
+![Dependecies](https://img.shields.io/david/cupcakearmy/unbrew)
+
+
 The missing brew cleanup utility.
 
-This is finally the easy way to clean your forgotten packages and dependencies.
+This is finally the easy way to **clean your forgotten packages and dependencies**.
 
 ![Demo Video](https://github.com/cupcakearmy/unbrew/raw/master/.github/demo.gif)
 

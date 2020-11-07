@@ -2,8 +2,9 @@
 
 const cp = require('child_process')
 const chalk = require('chalk')
-
 const inquirer = require('inquirer')
+
+const { version } = require('../package.json')
 
 function checkIfBrewIsInstalled() {
   try {
@@ -28,6 +29,9 @@ async function main() {
     console.log(chalk.red.underline('Brew not installed'))
     return
   }
+  console.log(
+    `${chalk.bold.blue('UnBrew')} - Brew cleanup utility\nVersion: ${version}\n`
+  )
 
   let leaves
   let loosers

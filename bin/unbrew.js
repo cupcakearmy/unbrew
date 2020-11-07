@@ -60,11 +60,14 @@ async function main() {
   }
 
   console.log('🗑  Uninstalling')
+  const allLoosers = []
   while (loosers.length) {
+    allLoosers.push(...loosers)
     const joinedLoosers = loosers.join(' ')
     cp.execSync(`brew uninstall ${joinedLoosers}`)
     loosers = getLoosers(keepers)
   }
+  console.log('✅ Uninstalled: ' + allLoosers.join(', '))
 
   console.log('🧽 Cleaning up')
   cp.execSync(`brew cleanup`)

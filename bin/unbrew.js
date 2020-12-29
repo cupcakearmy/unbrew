@@ -50,6 +50,10 @@ async function main() {
   ])
 
   loosers = getLoosers(keepers, leaves)
+  if (loosers.length === 0) {
+    console.log(chalk.bold('No package/s selected for deletion.'))
+    return
+  }
   const { confirmed } = await inquirer.prompt([
     {
       type: 'confirm',
@@ -78,4 +82,6 @@ async function main() {
 
   console.log(chalk.bold.green('🚀 Done'))
 }
-main()
+main().finally(() => {
+  console.log(chalk.blue('Bye Bye 👋'))
+})

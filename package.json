@@ -11,7 +11,7 @@
     "unbrew": "bin/unbrew.js"
   },
   "dependencies": {
-    "chalk": "4",
-    "inquirer": "7"
+    "chalk": "^4",
+    "inquirer": "^8"
   }
 }

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const cp = require('child_process')
-const chalk = require('chalk')
-const inquirer = require('inquirer')
+import cp from 'child_process'
+import chalk from 'chalk'
+import inquirer from 'inquirer'
 
 const { version } = require('../package.json')
 
@@ -15,12 +15,12 @@ function checkIfBrewIsInstalled() {
   }
 }
 
-function getListOfLeaves() {
+function getListOfLeaves(): string[] {
   const list = cp.execSync('brew leaves', { encoding: 'utf-8' })
   return list.trim().split('\n')
 }
 
-function getLoosers(keepers, leaves = getListOfLeaves()) {
+function getLoosers(keepers: string[], leaves = getListOfLeaves()): string[] {
   return leaves.filter((leave) => !keepers.includes(leave))
 }
 
@@ -33,8 +33,8 @@ async function main() {
     `${chalk.bold.blue('UnBrew')} - Brew cleanup utility\nVersion: ${version}\n`
   )
 
-  let leaves
-  let loosers
+  let leaves: string[]
+  let loosers: string[]
 
   leaves = getListOfLeaves()
   const { keepers } = await inquirer.prompt([
@@ -68,7 +68,7 @@ async function main() {
   }
 
   console.log('🗑  Uninstalling')
-  const allLoosers = []
+  const allLoosers: string[] = []
   while (loosers.length) {
     allLoosers.push(...loosers)
     const joinedLoosers = loosers.join(' ')

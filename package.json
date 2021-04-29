@@ -1,17 +1,35 @@
 {
   "name": "unbrew",
-  "version": "1.2.1",
+  "description": "brew cleanup utility",
+  "version": "1.2.2",
   "author": {
     "name": "Niccolo Borgioli",
     "email": "hi@nicco.io",
     "url": "https://nicco.io"
   },
   "license": "MIT",
+  "keywords": [
+    "brew",
+    "macos",
+    "cleanup"
+  ],
   "bin": {
-    "unbrew": "bin/unbrew.js"
+    "unbrew": "bin/index.js"
+  },
+  "files": [
+    "./bin"
+  ],
+  "scripts": {
+    "dev": "tsc -w",
+    "prepublishOnly": "tsc"
   },
   "dependencies": {
     "chalk": "^4",
     "inquirer": "^8"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^7.3.1",
+    "@types/node": "^15.0.1",
+    "typescript": "^4.2.4"
   }
 }

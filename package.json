@@ -1,7 +1,7 @@
 {
   "name": "unbrew",
   "description": "brew cleanup utility",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": {
     "name": "Niccolo Borgioli",
     "email": "hi@nicco.io",

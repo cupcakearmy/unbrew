@@ -1,7 +1,7 @@
 # 🍺 unbrew
 
 ![NPM Version](https://img.shields.io/npm/v/unbrew)
-![NPM Wekly Downloads](https://img.shields.io/npm/dm/unbrew)
+![NPM Wekly Downloads](https://img.shields.io/npm/dt/unbrew)
 ![Dependecies](https://img.shields.io/david/cupcakearmy/unbrew)
 
 

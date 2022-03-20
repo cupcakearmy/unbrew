@@ -1,7 +1,7 @@
 {
   "name": "unbrew",
   "description": "brew cleanup utility",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": {
     "name": "Niccolo Borgioli",
     "email": "hi@nicco.io",
@@ -15,6 +15,9 @@
     "cleanup",
     "cli"
   ],
+  "engines": {
+    "node": ">=12"
+  },
   "bin": {
     "unbrew": "bin/index.js"
   },
@@ -24,15 +27,16 @@
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "rm -rf ./bin && tsc"
   },
+  "type": "module",
   "dependencies": {
-    "chalk": "^4",
-    "inquirer": "^8"
+    "chalk": "^5.0.1",
+    "inquirer": "^8.2.1"
   },
   "devDependencies": {
-    "@types/inquirer": "^7",
-    "@types/node": "^16",
-    "typescript": "^4.3"
+    "@types/inquirer": "^8.2.0",
+    "@types/node": "^16.11.26",
+    "typescript": "^4.6.2"
   }
 }

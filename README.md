@@ -7,7 +7,7 @@
 
 The missing brew cleanup utility.
 
-This is finally the easy way to **clean your forgotten packages and dependencies**.
+This is finally the easy way to **clean your forgotten packages, casks and dependencies**.
 
 ![Demo Video](https://github.com/cupcakearmy/unbrew/raw/master/.github/demo.gif)
 

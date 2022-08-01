@@ -2,7 +2,7 @@
 
 ![NPM Version](https://img.shields.io/npm/v/unbrew)
 ![NPM Wekly Downloads](https://img.shields.io/npm/dt/unbrew)
-![Dependecies](https://img.shields.io/david/cupcakearmy/unbrew)
+![NPM License](https://img.shields.io/npm/l/unbrew)
 
 
 The missing brew cleanup utility.

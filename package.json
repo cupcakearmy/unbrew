@@ -1,7 +1,7 @@
 {
   "name": "unbrew",
   "description": "brew cleanup utility",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "author": {
     "name": "Niccolo Borgioli",
     "email": "hi@nicco.io",
@@ -31,12 +31,12 @@
   },
   "type": "module",
   "dependencies": {
-    "chalk": "^5.0.1",
-    "inquirer": "^8.2.4"
+    "chalk": "^5.2.0",
+    "inquirer": "^9.1.4"
   },
   "devDependencies": {
-    "@types/inquirer": "^8.2.1",
-    "@types/node": "^16.11.47",
-    "typescript": "^4.7.4"
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^16.18.14",
+    "typescript": "^4.9.5"
   }
 }

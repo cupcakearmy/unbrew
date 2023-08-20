@@ -4,7 +4,7 @@ import chalk from 'chalk'
 import cp from 'child_process'
 import inquirer from 'inquirer'
 
-const VERSION = '1.3.1'
+const VERSION = '1.3.2'
 
 class ListEntry {
   name!: string

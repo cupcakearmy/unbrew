@@ -108,7 +108,7 @@ async function main() {
         {
           type: 'confirm',
           name: 'confirmed',
-          message: `Delelte: ${chalk.bold.blue(loosers.map((l) => l.name).join(', '))} and their dependencies?`,
+          message: `Delete: ${chalk.bold.blue(loosers.map((l) => l.name).join(', '))} and their dependencies?`,
         },
       ])
 
